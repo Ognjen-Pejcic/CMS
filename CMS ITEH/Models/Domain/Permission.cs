@@ -6,6 +6,5 @@ namespace CMS_ITEH.Models.Domain
     {
         public int PermissionId { get; set; }
         public string PermissionName { get; set; }
-        public List<Role> Roles { get; set; }
     }
 }

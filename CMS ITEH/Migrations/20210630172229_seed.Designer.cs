@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CMS_ITEH.Migrations
 {
     [DbContext(typeof(CmsContext))]
-    [Migration("20210630161643_init")]
-    partial class init
+    [Migration("20210630172229_seed")]
+    partial class seed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,50 @@ namespace CMS_ITEH.Migrations
                     b.HasKey("PermissionId");
 
                     b.ToTable("Permissions");
+
+                    b.HasData(
+                        new
+                        {
+                            PermissionId = 1,
+                            PermissionName = "User management"
+                        },
+                        new
+                        {
+                            PermissionId = 2,
+                            PermissionName = "Post management"
+                        });
+                });
+
+            modelBuilder.Entity("CMS_ITEH.Models.Domain.PermissionRole", b =>
+                {
+                    b.Property<int>("PermissionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PermissionId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("PermissionsRole");
+
+                    b.HasData(
+                        new
+                        {
+                            PermissionId = 1,
+                            RoleId = 1
+                        },
+                        new
+                        {
+                            PermissionId = 2,
+                            RoleId = 1
+                        },
+                        new
+                        {
+                            PermissionId = 2,
+                            RoleId = 2
+                        });
                 });
 
             modelBuilder.Entity("CMS_ITEH.Models.Domain.Post", b =>
@@ -78,6 +122,20 @@ namespace CMS_ITEH.Migrations
                     b.HasKey("RoleId");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            RoleDescription = "Write and edit content, change other user information",
+                            RoleName = "Admin"
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            RoleDescription = "Write and edit content",
+                            RoleName = "Writer"
+                        });
                 });
 
             modelBuilder.Entity("CMS_ITEH.Models.Domain.User", b =>
@@ -109,19 +167,23 @@ namespace CMS_ITEH.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("PermissionRole", b =>
+            modelBuilder.Entity("CMS_ITEH.Models.Domain.PermissionRole", b =>
                 {
-                    b.Property<int>("PermissionsPermissionId")
-                        .HasColumnType("int");
+                    b.HasOne("CMS_ITEH.Models.Domain.Permission", "Permission")
+                        .WithMany()
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<int>("RolesRoleId")
-                        .HasColumnType("int");
+                    b.HasOne("CMS_ITEH.Models.Domain.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasKey("PermissionsPermissionId", "RolesRoleId");
+                    b.Navigation("Permission");
 
-                    b.HasIndex("RolesRoleId");
-
-                    b.ToTable("PermissionRole");
+                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("CMS_ITEH.Models.Domain.Post", b =>
@@ -140,21 +202,6 @@ namespace CMS_ITEH.Migrations
                         .HasForeignKey("RoleId");
 
                     b.Navigation("Role");
-                });
-
-            modelBuilder.Entity("PermissionRole", b =>
-                {
-                    b.HasOne("CMS_ITEH.Models.Domain.Permission", null)
-                        .WithMany()
-                        .HasForeignKey("PermissionsPermissionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CMS_ITEH.Models.Domain.Role", null)
-                        .WithMany()
-                        .HasForeignKey("RolesRoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
