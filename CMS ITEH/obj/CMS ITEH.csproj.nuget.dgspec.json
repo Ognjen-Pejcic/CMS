@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pejci\\source\\repos\\CMS ITEH\\CMS ITEH\\CMS ITEH.csproj": {}
+    "C:\\Users\\Korisnik\\source\\repos\\CMS\\CMS ITEH\\CMS ITEH.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pejci\\source\\repos\\CMS ITEH\\CMS ITEH\\CMS ITEH.csproj": {
+    "C:\\Users\\Korisnik\\source\\repos\\CMS\\CMS ITEH\\CMS ITEH.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pejci\\source\\repos\\CMS ITEH\\CMS ITEH\\CMS ITEH.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\source\\repos\\CMS\\CMS ITEH\\CMS ITEH.csproj",
         "projectName": "CMS ITEH",
-        "projectPath": "C:\\Users\\pejci\\source\\repos\\CMS ITEH\\CMS ITEH\\CMS ITEH.csproj",
-        "packagesPath": "C:\\Users\\pejci\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pejci\\source\\repos\\CMS ITEH\\CMS ITEH\\obj\\",
+        "projectPath": "C:\\Users\\Korisnik\\source\\repos\\CMS\\CMS ITEH\\CMS ITEH.csproj",
+        "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Korisnik\\source\\repos\\CMS\\CMS ITEH\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pejci\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
