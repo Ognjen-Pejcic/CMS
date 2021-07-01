@@ -19,32 +19,56 @@ namespace CMS_ITEH.Controllers
         [HttpGet]
         public IEnumerable<User> Get()
         {
-            return CmsContext.Instance.Users.Where(i=>i.RoleId==1).Include(p => p.Role).ToList();
+            return CmsContext.Instance.Users.Include(p => p.Role).ToList();
         }
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public User Get(int id)
         {
-            return "value";
+            return CmsContext.Instance.Users.Find(id);
         }
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public User Post([FromBody] User user)
         {
+            return CmsContext.Instance.Users.Single(u => u.UserName == user.UserName && u.Password == user.Password); ;
+        }
+
+        // POST api/<UserController>
+        [HttpPost]
+        [Route("add-user")]
+        public void Add([FromBody] User user)
+        {
+            CmsContext.Instance.Users.Add(user);
+            CmsContext.Instance.SaveChanges();
         }
 
         // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPatch]
+        [Route ("edit-user")]
+        public void Update([FromBody] User user)
         {
+            User usernew = CmsContext.Instance.Users.Find(user.UserId);
+            usernew.UserName=user.UserName;
+            usernew.Password = user.Password;
+            usernew.RoleId = user.RoleId;
+            usernew.LastName = user.LastName;
+            usernew.FirstName = user.FirstName;
+            CmsContext.Instance.Update(usernew);
+            CmsContext.Instance.SaveChanges();
+
         }
 
         // DELETE api/<UserController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        [Route ("delete-user")]
+        
+        public void Delete([FromBody]User user)
         {
+            CmsContext.Instance.Remove(user);
+            CmsContext.Instance.SaveChanges();
         }
     }
 }
