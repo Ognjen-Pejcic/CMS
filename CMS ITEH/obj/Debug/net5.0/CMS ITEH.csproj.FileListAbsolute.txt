@@ -59,3 +59,64 @@ C:\Users\pejci\source\repos\CMS ITEH\CMS ITEH\obj\Debug\net5.0\CMS ITEH.dll
 C:\Users\pejci\source\repos\CMS ITEH\CMS ITEH\obj\Debug\net5.0\ref\CMS ITEH.dll
 C:\Users\pejci\source\repos\CMS ITEH\CMS ITEH\obj\Debug\net5.0\CMS ITEH.pdb
 C:\Users\pejci\source\repos\CMS ITEH\CMS ITEH\obj\Debug\net5.0\CMS ITEH.genruntimeconfig.cache
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\appsettings.json
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\CMS ITEH.exe
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\CMS ITEH.deps.json
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\CMS ITEH.runtimeconfig.json
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\CMS ITEH.runtimeconfig.dev.json
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\CMS ITEH.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\ref\CMS ITEH.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\CMS ITEH.pdb
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Humanizer.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.csproj.AssemblyReference.cache
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.AssemblyInfoInputs.cache
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.AssemblyInfo.cs
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\staticwebassets\CMS ITEH.StaticWebAssets.Manifest.cache
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\staticwebassets\CMS ITEH.StaticWebAssets.xml
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\scopedcss\bundle\CMS ITEH.styles.css
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.RazorTargetAssemblyInfo.cache
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.csproj.CopyComplete
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\ref\CMS ITEH.dll
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.pdb
+C:\Users\Korisnik\source\repos\CMS\CMS ITEH\obj\Debug\net5.0\CMS ITEH.genruntimeconfig.cache
