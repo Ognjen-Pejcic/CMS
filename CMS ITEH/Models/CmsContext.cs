@@ -9,12 +9,23 @@ namespace CMS_ITEH.Models
 {
     public class CmsContext : DbContext 
     {
-        public DbSet<User> Users { get; set; }
-        public DbSet<Post> Posts { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<Permission> Permissions { get; set; }
-        public DbSet<PermissionRole> PermissionsRole { get; set; }
+        public  DbSet<User> Users { get; set; }
+        public static DbSet<Post> Posts { get; set; }
+        public static DbSet<Role> Roles { get; set; }
+        public static DbSet<Permission> Permissions { get; set; }
 
+        private static CmsContext instance;
+        public static CmsContext Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new CmsContext();
+                }
+                return instance;
+            }
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Cms;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CMS_ITEH.Models;
+using CMS_ITEH.Models.Domain;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +17,9 @@ namespace CMS_ITEH.Controllers
     {
         // GET: api/<UserController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            return CmsContext.Instance.Users.Where(i=>i.RoleId==1).Include(p => p.Role).ToList();
         }
 
         // GET api/<UserController>/5
