@@ -12,11 +12,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Newtonsoft.Json.Serialization;
 namespace CMS_ITEH
 {
     public class Startup
     {
+        public static readonly ILoggerFactory MyLoggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,6 +28,7 @@ namespace CMS_ITEH
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -35,21 +37,26 @@ namespace CMS_ITEH
             });
             services.AddCors(options =>
             {
-                options.AddDefaultPolicy(
-                    builder =>
+                options.AddPolicy("AllowOrigin",
+                    options =>
                     {
-                        builder.WithOrigins("http://localhost:4200");
-                        builder.AllowAnyHeader();
-                        builder.AllowAnyMethod();
-                        builder.AllowCredentials();
+                        options.WithOrigins("http://localhost:4200");
+                        options.AllowAnyHeader();
+                        options.AllowAnyMethod();
+                        options.AllowCredentials();
                     });
             });
             services.AddAuthentication(IISDefaults.AuthenticationScheme);
+
+            //JSON Serializer
+            services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+            .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+  
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -61,7 +68,7 @@ namespace CMS_ITEH
 
             app.UseRouting();
 
-            app.UseCors();
+            app.UseCors(options=>options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader() );
 
             app.UseAuthorization();
 
