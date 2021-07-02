@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CMS_ITEH.Migrations
 {
     [DbContext(typeof(CmsContext))]
-    [Migration("20210630172229_seed")]
-    partial class seed
+    [Migration("20210702151347_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,7 +33,7 @@ namespace CMS_ITEH.Migrations
 
                     b.HasKey("PermissionId");
 
-                    b.ToTable("Permissions");
+                    b.ToTable("Permission");
 
                     b.HasData(
                         new
@@ -60,7 +60,7 @@ namespace CMS_ITEH.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("PermissionsRole");
+                    b.ToTable("PermissionRole");
 
                     b.HasData(
                         new
@@ -103,7 +103,7 @@ namespace CMS_ITEH.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Posts");
+                    b.ToTable("Post");
                 });
 
             modelBuilder.Entity("CMS_ITEH.Models.Domain.Role", b =>
@@ -121,7 +121,7 @@ namespace CMS_ITEH.Migrations
 
                     b.HasKey("RoleId");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Role");
 
                     b.HasData(
                         new
@@ -154,7 +154,7 @@ namespace CMS_ITEH.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("RoleId")
+                    b.Property<int>("RoleId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserName")
@@ -189,7 +189,7 @@ namespace CMS_ITEH.Migrations
             modelBuilder.Entity("CMS_ITEH.Models.Domain.Post", b =>
                 {
                     b.HasOne("CMS_ITEH.Models.Domain.User", "User")
-                        .WithMany()
+                        .WithMany("Posts")
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
@@ -199,9 +199,16 @@ namespace CMS_ITEH.Migrations
                 {
                     b.HasOne("CMS_ITEH.Models.Domain.Role", "Role")
                         .WithMany()
-                        .HasForeignKey("RoleId");
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("CMS_ITEH.Models.Domain.User", b =>
+                {
+                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

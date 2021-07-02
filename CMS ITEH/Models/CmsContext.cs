@@ -33,6 +33,10 @@ namespace CMS_ITEH.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PermissionRole>().HasKey(e => new { e.PermissionId, e.RoleId });
+            modelBuilder.Entity<Post>()
+             .HasOne(p => p.User)
+             .WithMany(b => b.Posts)
+             .HasForeignKey("UserId");
             Seed(modelBuilder);
         }
         private static void Seed(ModelBuilder modelBuilder)

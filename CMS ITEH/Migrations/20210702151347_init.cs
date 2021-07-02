@@ -8,7 +8,7 @@ namespace CMS_ITEH.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Permissions",
+                name: "Permission",
                 columns: table => new
                 {
                     PermissionId = table.Column<int>(type: "int", nullable: false)
@@ -17,11 +17,11 @@ namespace CMS_ITEH.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Permissions", x => x.PermissionId);
+                    table.PrimaryKey("PK_Permission", x => x.PermissionId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Roles",
+                name: "Role",
                 columns: table => new
                 {
                     RoleId = table.Column<int>(type: "int", nullable: false)
@@ -31,11 +31,11 @@ namespace CMS_ITEH.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Roles", x => x.RoleId);
+                    table.PrimaryKey("PK_Role", x => x.RoleId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "PermissionsRole",
+                name: "PermissionRole",
                 columns: table => new
                 {
                     PermissionId = table.Column<int>(type: "int", nullable: false),
@@ -43,17 +43,17 @@ namespace CMS_ITEH.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PermissionsRole", x => new { x.PermissionId, x.RoleId });
+                    table.PrimaryKey("PK_PermissionRole", x => new { x.PermissionId, x.RoleId });
                     table.ForeignKey(
-                        name: "FK_PermissionsRole_Permissions_PermissionId",
+                        name: "FK_PermissionRole_Permission_PermissionId",
                         column: x => x.PermissionId,
-                        principalTable: "Permissions",
+                        principalTable: "Permission",
                         principalColumn: "PermissionId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_PermissionsRole_Roles_RoleId",
+                        name: "FK_PermissionRole_Role_RoleId",
                         column: x => x.RoleId,
-                        principalTable: "Roles",
+                        principalTable: "Role",
                         principalColumn: "RoleId",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -68,21 +68,21 @@ namespace CMS_ITEH.Migrations
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RoleId = table.Column<int>(type: "int", nullable: true)
+                    RoleId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.UserId);
                     table.ForeignKey(
-                        name: "FK_Users_Roles_RoleId",
+                        name: "FK_Users_Role_RoleId",
                         column: x => x.RoleId,
-                        principalTable: "Roles",
+                        principalTable: "Role",
                         principalColumn: "RoleId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Posts",
+                name: "Post",
                 columns: table => new
                 {
                     PostId = table.Column<int>(type: "int", nullable: false)
@@ -94,23 +94,56 @@ namespace CMS_ITEH.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Posts", x => x.PostId);
+                    table.PrimaryKey("PK_Post", x => x.PostId);
                     table.ForeignKey(
-                        name: "FK_Posts_Users_UserId",
+                        name: "FK_Post_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Permission",
+                columns: new[] { "PermissionId", "PermissionName" },
+                values: new object[,]
+                {
+                    { 1, "User management" },
+                    { 2, "Post management" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Role",
+                columns: new[] { "RoleId", "RoleDescription", "RoleName" },
+                values: new object[,]
+                {
+                    { 1, "Write and edit content, change other user information", "Admin" },
+                    { 2, "Write and edit content", "Writer" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PermissionRole",
+                columns: new[] { "PermissionId", "RoleId" },
+                values: new object[] { 1, 1 });
+
+            migrationBuilder.InsertData(
+                table: "PermissionRole",
+                columns: new[] { "PermissionId", "RoleId" },
+                values: new object[] { 2, 1 });
+
+            migrationBuilder.InsertData(
+                table: "PermissionRole",
+                columns: new[] { "PermissionId", "RoleId" },
+                values: new object[] { 2, 2 });
+
             migrationBuilder.CreateIndex(
-                name: "IX_PermissionsRole_RoleId",
-                table: "PermissionsRole",
+                name: "IX_PermissionRole_RoleId",
+                table: "PermissionRole",
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Posts_UserId",
-                table: "Posts",
+                name: "IX_Post_UserId",
+                table: "Post",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -122,19 +155,19 @@ namespace CMS_ITEH.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PermissionsRole");
+                name: "PermissionRole");
 
             migrationBuilder.DropTable(
-                name: "Posts");
+                name: "Post");
 
             migrationBuilder.DropTable(
-                name: "Permissions");
+                name: "Permission");
 
             migrationBuilder.DropTable(
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Roles");
+                name: "Role");
         }
     }
 }
